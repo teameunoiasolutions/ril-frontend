@@ -1,0 +1,136 @@
+/**
+ * Responsive typography utilities — values from Frontend Implementation Specification.
+ * Used by Heading and Text components. All sizes use design tokens only.
+ */
+
+@layer components {
+  .type-display-xl {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.1;
+    font-size: 40px;
+  }
+
+  .type-h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.1;
+    font-size: 32px;
+  }
+
+  .type-h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.2;
+    font-size: 26px;
+  }
+
+  .type-h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.2;
+    font-size: 22px;
+  }
+
+  .type-h4 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    line-height: 1.2;
+    font-size: 22px;
+  }
+
+  .type-body-large {
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.7;
+    font-size: 18px;
+  }
+
+  .type-body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  .type-body-journal {
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.8;
+    font-size: 16px;
+  }
+
+  .type-caption {
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+  .type-label {
+    font-family: var(--font-body);
+    font-weight: 500;
+    line-height: 1.5;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .type-nav {
+    font-family: var(--font-body);
+    font-weight: 500;
+    line-height: 1.5;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .type-pull-quote {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1.5;
+    font-size: 24px;
+    border-left: 2px solid var(--color-accent);
+    padding-left: var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .type-display-xl {
+      font-size: 56px;
+    }
+
+    .type-h1 {
+      font-size: 40px;
+    }
+
+    .type-h2 {
+      font-size: 32px;
+    }
+
+    .type-h3 {
+      font-size: 24px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .type-display-xl {
+      font-size: 72px;
+    }
+
+    .type-h1 {
+      font-size: 48px;
+    }
+
+    .type-h2 {
+      font-size: 36px;
+    }
+
+    .type-h3 {
+      font-size: 28px;
+    }
+
+    .type-pull-quote {
+      font-size: 32px;
+    }
+  }
+}

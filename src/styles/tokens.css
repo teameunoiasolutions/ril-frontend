@@ -1,0 +1,91 @@
+/**
+ * CSS custom properties — runtime source for Tailwind and global styles.
+ * Values mirror src/design-system/*.ts. Keep both in sync when tokens change.
+ */
+
+:root {
+  /* Primitive colours */
+  --color-ivory: #FBF9F5;
+  --color-green: #004225;
+  --color-green-hover: #1A5C3A;
+  --color-charcoal: #1A1A1A;
+  --color-stone: #E8E1D5;
+  --color-forest-shadow: #0D1F17;
+  --color-gold: #C5A059;
+  --color-white: #FFFFFF;
+  --color-metadata: rgba(26, 26, 26, 0.6);
+  --color-scrim: rgba(13, 31, 23, 0.4);
+
+  /* Semantic colours — components consume these */
+  --color-primary: var(--color-green);
+  --color-primary-hover: var(--color-green-hover);
+  --color-surface: var(--color-ivory);
+  --color-surface-secondary: var(--color-stone);
+  --color-surface-atmospheric: var(--color-forest-shadow);
+  --color-text: var(--color-charcoal);
+  --color-text-muted: var(--color-metadata);
+  --color-text-inverse: var(--color-white);
+  --color-text-secondary-on-dark: rgba(255, 255, 255, 0.8);
+  --color-accent: var(--color-gold);
+  --color-border: var(--color-stone);
+  --color-focus: var(--color-green);
+  --color-focus-inverse: var(--color-white);
+  --color-disabled-background: var(--color-stone);
+  --color-disabled-text: var(--color-metadata);
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --weight-display-bold: 700;
+  --weight-display-semibold: 600;
+  --weight-body-regular: 400;
+  --weight-body-medium: 500;
+  --weight-body-semibold: 600;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+  --space-6: 64px;
+  --space-7: 96px;
+  --space-8: 160px;
+
+  /* Layout */
+  --container-max-width: 1280px;
+  --container-margin-mobile: 16px;
+  --container-margin-tablet: 40px;
+  --container-margin-desktop: 40px;
+  --container-margin-large: 80px;
+  --section-padding-mobile: 60px;
+  --section-padding-tablet: 80px;
+  --section-padding-desktop: 120px;
+  --grid-gutter-mobile: 16px;
+  --grid-gutter-tablet: 20px;
+  --grid-gutter-desktop: 24px;
+  --touch-target-min: 44px;
+  --measure-max-width: 45rem;
+
+  /* Radius */
+  --radius-button: 2px;
+  --radius-card: 4px;
+
+  /* Motion */
+  --duration-instant: 100ms;
+  --duration-fast: 200ms;
+  --duration-medium: 500ms;
+  --duration-slow: 800ms;
+  --duration-fade-in: 600ms;
+  --duration-fade-up: 700ms;
+  --duration-fade-scale: 500ms;
+  --duration-horizontal-reveal: 800ms;
+  --duration-atmospheric-min: 8000ms;
+  --duration-atmospheric-max: 20000ms;
+  --ease-standard: ease-out;
+  --ease-inout: ease-in-out;
+
+  /* Focus */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+}

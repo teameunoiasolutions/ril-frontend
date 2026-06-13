@@ -1,0 +1,156 @@
+@import './fonts.css';
+@import './tokens.css';
+@import './typography-utilities.css';
+@import './button-utilities.css';
+
+@import 'tailwindcss';
+
+@theme {
+  /* Semantic colours */
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-surface: var(--color-surface);
+  --color-surface-secondary: var(--color-surface-secondary);
+  --color-surface-atmospheric: var(--color-surface-atmospheric);
+  --color-text: var(--color-text);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-inverse: var(--color-text-inverse);
+  --color-text-secondary-on-dark: var(--color-text-secondary-on-dark);
+  --color-accent: var(--color-accent);
+  --color-border: var(--color-border);
+  --color-focus: var(--color-focus);
+  --color-focus-inverse: var(--color-focus-inverse);
+  --color-disabled-background: var(--color-disabled-background);
+  --color-disabled-text: var(--color-disabled-text);
+  --color-scrim: var(--color-scrim);
+
+  /* Primitive colours — available for rare direct use */
+  --color-ivory: var(--color-ivory);
+  --color-green: var(--color-green);
+  --color-charcoal: var(--color-charcoal);
+  --color-stone: var(--color-stone);
+  --color-forest-shadow: var(--color-forest-shadow);
+  --color-gold: var(--color-gold);
+  --color-white: var(--color-white);
+
+  /* Typography */
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  /* Spacing */
+  --spacing-1: var(--space-1);
+  --spacing-2: var(--space-2);
+  --spacing-3: var(--space-3);
+  --spacing-4: var(--space-4);
+  --spacing-5: var(--space-5);
+  --spacing-6: var(--space-6);
+  --spacing-7: var(--space-7);
+  --spacing-8: var(--space-8);
+
+  /* Radius */
+  --radius-button: var(--radius-button);
+  --radius-card: var(--radius-card);
+
+  /* Shadows — intentionally none for cards */
+  --shadow-none: none;
+
+  /* Breakpoints */
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1200px;
+  --breakpoint-large-desktop: 1440px;
+
+  /* Animation */
+  --duration-instant: var(--duration-instant);
+  --duration-fast: var(--duration-fast);
+  --duration-medium: var(--duration-medium);
+  --duration-slow: var(--duration-slow);
+  --duration-fade-in: var(--duration-fade-in);
+  --duration-fade-up: var(--duration-fade-up);
+  --duration-fade-scale: var(--duration-fade-scale);
+  --duration-horizontal-reveal: var(--duration-horizontal-reveal);
+  --ease-standard: var(--ease-standard);
+  --ease-inout: var(--ease-inout);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  :focus-visible {
+    outline: var(--focus-ring-width) solid var(--color-focus);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  .on-dark :focus-visible {
+    outline-color: var(--color-focus-inverse);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .sr-only-focusable:focus,
+  .sr-only-focusable:focus-visible {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: var(--space-2) var(--space-3);
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    z-index: 100;
+  }
+}

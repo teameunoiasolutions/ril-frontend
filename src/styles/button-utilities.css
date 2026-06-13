@@ -1,0 +1,110 @@
+/**
+ * Button utilities — Frontend Implementation Specification Section 7.
+ * Semantic tokens only. Loading spinner is the one permitted spinner exception.
+ */
+
+@layer components {
+  .btn-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-height: var(--touch-target-min);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: var(--radius-button);
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    transition: background-color var(--duration-fast) ease,
+      color var(--duration-fast) ease,
+      border-color var(--duration-fast) ease;
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+    border: none;
+    padding: var(--space-3) var(--space-5);
+  }
+
+  .btn-primary:hover:not(:disabled):not([aria-disabled='true']) {
+    background-color: var(--color-primary-hover);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    padding: var(--space-3) var(--space-5);
+  }
+
+  .btn-secondary:hover:not(:disabled):not([aria-disabled='true']) {
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
+  }
+
+  .btn-ghost {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: none;
+    border-bottom: 1px solid transparent;
+    padding: var(--space-2) 0;
+    min-height: var(--touch-target-min);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .btn-ghost:hover:not(:disabled):not([aria-disabled='true']) {
+    border-bottom-color: var(--color-accent);
+  }
+
+  .btn-ghost-inverse {
+    color: var(--color-text-inverse);
+  }
+
+  .btn-ghost-inverse:hover:not(:disabled):not([aria-disabled='true']) {
+    border-bottom-color: var(--color-accent);
+  }
+
+  .btn-disabled {
+    background-color: var(--color-disabled-background) !important;
+    color: var(--color-disabled-text) !important;
+    border-color: var(--color-disabled-background) !important;
+    cursor: not-allowed;
+  }
+
+  .btn-loading {
+    color: transparent !important;
+    pointer-events: none;
+  }
+
+  .btn-loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--color-text-inverse);
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: btn-spin var(--duration-slow) linear infinite;
+  }
+
+  @keyframes btn-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn-loading::after {
+      animation: none;
+      border-right-color: var(--color-text-inverse);
+      opacity: 0.6;
+    }
+  }
+}
